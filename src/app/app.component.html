@@ -1,0 +1,113 @@
+<div class="container"><br />
+  <form [formGroup]="miFormulario">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2" style="text-align:center">
+          <img alt="" src="assets/foto.jpg" width="100">
+          <br /><br />
+          <h6>
+              {{ miFormulario.value.txtFullname}}
+          </h6>
+        </div>
+        <div class="col-lg-5">
+          <h5 style="font-weight:bolder">
+            User Details
+          </h5>
+          <div class="form-group">
+            <div *ngIf="txtFullname.touched && txtFullname.invalid">
+              <small class="text-danger" *ngIf="txtFullname.errors.required">
+                not empty
+              </small>
+            </div>
+            <input [class.is-invalid]="txtFullname.invalid && txtFullname.touched" formControlName="txtFullname"
+              name="txtFullname" placeholder="Full Name *" type="text" id="txtFullname" class="form-control"
+              style="border: 0; border-bottom: 1px solid;outline: 0;">
+          </div>
+          <div class="form-group">
+            <div *ngIf="txtBirthay.touched && txtBirthay.invalid">
+              <small class="text-danger" *ngIf="txtBirthay.errors.required">
+                not empty
+              </small>
+            </div>
+            <div class="input-group date">
+              <input [class.is-invalid]="txtBirthay.invalid && txtBirthay.touched" formControlName="txtBirthay"
+                name="txtBirthay" placeholder="Your Birthay *" type="text" id="txtBirthay" class="form-control"
+                style="border: 0; border-bottom: 1px solid;outline: 0;">
+              <span class="input-group-addon">
+                <i class="fa fa-calendar">
+                </i>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div *ngIf="cboGender.touched && txtBirthay.invalid">
+              <small class="text-danger" *ngIf="cboGender.errors.required">
+                is not empty
+              </small>
+            </div>
+            <select [class.is-invalid]="cboGender.invalid && cboGender.touched" formControlName="cboGender"
+              name="cboGender" id="cboGender" class="form-control"
+              style="border: 0; border-bottom: 1px solid;outline: 0;">
+              <option value="">
+                Gender
+              </option>
+              <option value="F">
+                Femenino
+              </option>
+              <option value="M">
+                masculino
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <h5 style="font-weight:bolder">
+            Account Details
+          </h5>
+          <div class="form-group">
+            <div *ngIf="txtUsername.touched && txtUsername.invalid">
+              <small class="text-danger" *ngIf="txtUsername.errors.required">
+                not empty
+              </small>
+              <small class="text-danger" *ngIf="txtUsername.errors.minlength">
+                at least {{ txtUsername.errors.minlength.requiredLength }} characters long
+              </small>
+              <small class="text-danger" *ngIf="txtUsername.errors.maxlength">
+                can´t be more than {{ txtUsername.errors.maxlength.requiredLength }} characters long
+              </small>
+            </div>
+            <input [class.is-invalid]="txtUsername.invalid && txtUsername.touched" formControlName="txtUsername"
+              name="txtUsername" placeholder="Username *" type="text" id="txtUsername" class="form-control"
+              style="border: 0; border-bottom: 1px solid;outline: 0;">
+          </div>
+          <div class="form-group">
+            <div *ngIf="txtEmail.touched && txtEmail.invalid">
+              <small class="text-danger" *ngIf="txtEmail.errors.required">
+                not empty
+              </small>
+              <small class="text-danger" *ngIf="txtEmail.errors.email">
+                valid email
+              </small>
+            </div>
+            <input [class.is-invalid]="txtEmail.invalid && txtEmail.touched" formControlName="txtEmail" name="txtEmail"
+              placeholder="Email *" type="text" id="txtEmail" class="form-control"
+              style="border: 0; border-bottom: 1px solid;outline: 0;">
+          </div>
+          <div class="form-group">
+            <div *ngIf="txtPassword.tsouched && txtPassword.invalid">
+              <small class="text-danger" *ngIf="txtPassword.errors.required">
+                not empty
+              </small>
+              <small class="text-danger" *ngIf="txtPassword.errors.minlength">
+                at least {{ txtPassword.errors.minlength.requiredLength }} characters long
+              </small>
+            </div>
+            <input [class.is-invalid]="txtPassword.invalid && txtPassword.touched" formControlName="txtPassword"
+              name="txtPassword" placeholder="Password *" type="password" id="txtPassword" class="form-control"
+              style="border: 0; border-bottom: 1px solid;outline: 0;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
