@@ -7,6 +7,8 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { FormsComponent } from './forms/forms.component';
 import { ComponentesComponent } from './componentes/componentes.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
 
 const routes : Routes= [
   { 
@@ -32,7 +34,9 @@ const routes : Routes= [
     EmpleadoComponent,
     HomeComponent,
     FormsComponent,
-    ComponentesComponent
+    ComponentesComponent,
+    UserdetailsComponent,
+    AccountdetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -18,12 +18,12 @@ export class EmpleadoComponent implements OnInit {
   ngOnInit() {
     this.id = this._route.snapshot.paramMap.get("id");
     if (this.id == '1') {
-      this.nombre == 'Alexander Prieto';
-      this.cargo == 'Analista de Sistemas';
+      this.nombre = 'Alexander Prieto';
+      this.cargo = 'Analista de Sistemas';
     }
     else {
-      this.nombre == 'Delia Inga';
-      this.cargo == 'Psicóloga';
+      this.nombre = 'Delia Inga';
+      this.cargo = 'Psicóloga';
     }
   }
 
